@@ -7,13 +7,13 @@
   	<h2 class="my-5">Featured Products</h2>
     <div class="row">
       {% for product in object_list %}
-		  <div class="col-md-6 col-sm-12 col-lg-3">
+		  <a href="{{ product.get_absolute_url }}"><div class="col-md-6 col-sm-12 col-lg-3">
 			<figure class="card card-product">
 				<div class="img-wrap"> 
 					<img src="media/{{ product.mainimage }}" style="width: 100%; height: 300px;">
 				</div>
 				<figcaption class="info-wrap">
-					<h6 class="title text-dots"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h6>
+					<h6 class="title text-dots">{{ product.name }}</h6>
 					
 					<div class="action-wrap">
 						
@@ -24,7 +24,7 @@
 					</div> 
 				</figcaption>
 			</figure>
-		</div> 
+		</div> </a>
       {% endfor %}
   </div>
   </div>
